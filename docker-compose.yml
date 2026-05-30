@@ -58,7 +58,7 @@ services:
       - "5500:80"
     networks:
       - bank-network
-# Tạo mạng nội bộ để 6 anh em tự nhìn thấy nhau
+
 networks:
   bank-network:
     driver: bridge

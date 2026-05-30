@@ -20,7 +20,7 @@ public class SavingClient {
     private RestTemplate restTemplate;
 
     @Value("${saving.service.url}")
-    private String savingServiceUrl="http://localhost:8083/savingService-Tien";
+    private String savingServiceUrl="http://saving-service:8083/savingService-Tien";
     @Transactional
     public void closeSaving(int userId, String savingAccountNumber) {
 
