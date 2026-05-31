@@ -1,0 +1,33 @@
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  # Cục 1: Service quản lý Tài khoản (Ví dụ chạy cổng 8080)
+  - job_name: "account-service"
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ["localhost:8080"] 
+
+  # Cục 2: Service quản lý Giao dịch (Ví dụ chạy cổng 8081)
+  - job_name: "transaction-service"
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ["localhost:8082"]
+  - job_name: "user-service"
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ["localhost:8081"]
+   - job_name: "saving-service"
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ["localhost:8083"]
+   - job_name: "notification-service"
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ["localhost:8084"]
+  # Cục 3: API Gateway (Ví dụ chạy cổng 8082)
+  # - job_name: "bank-gateway"
+  #   metrics_path: "/actuator/prometheus"
+  #   static_configs:
+  #     - targets: ["localhost:8082"]
