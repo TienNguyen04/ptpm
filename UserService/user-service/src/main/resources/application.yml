@@ -32,3 +32,12 @@ logging:
   level:
     com.bank.userservice: DEBUG
     org.springframework.security: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus, health, info, metrics
+  endpoint:
+    prometheus:
+      enabled: true
